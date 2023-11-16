@@ -21,7 +21,8 @@ def check_user_habits_and_send():
             'text': message
         }
 
-        create_url_message_to_user = f'https://api.telegram.org/bot{TG_API_KEY}/sendMessage?'
+        create_url_message_to_user = f'https://api.telegram.org/bot' \
+                                     f'{TG_API_KEY}/sendMessage?'
 
         print(
             f'Выполняется отправка сообщения:'
