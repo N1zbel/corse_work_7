@@ -3,7 +3,7 @@ import requests
 from django.core.management import BaseCommand
 
 from habits.models import Habit
-from config.settings import TG_API_KEY
+from config.settings import TG_API_KEY, TG_URL
 
 
 class Command(BaseCommand):
@@ -22,7 +22,7 @@ class Command(BaseCommand):
                 'chat_id': habit.owner.telegram_chat_id,
                 'text': message
             }
-            create_url_message_to_user = f'https://web.telegram.org/a/#6939382442{TG_API_KEY}/sendMessage?chat_id={habit.owner.telegram_chat_id}&text={message}'
+            create_url_message_to_user = f'{TG_URL}{TG_API_KEY}/sendMessage?chat_id={habit.owner.telegram_chat_id}&text={message}'
 
             print(create_url_message_to_user)
-            requests.get(f'https://web.telegram.org/a/#6939382442{TG_API_KEY}/sendMessage?', params=params)
+            requests.get(f'{TG_URL}{TG_API_KEY}/sendMessage?', params=params)

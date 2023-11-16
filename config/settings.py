@@ -175,6 +175,7 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 TG_API_KEY = os.getenv('TG_API')
+TG_URL = os.getenv('TG_URL')
 CHAT_ID = os.getenv('CHAT_ID')
 
 CORS_ALLOWED_ORIGINS = [
